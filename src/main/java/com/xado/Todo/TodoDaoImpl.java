@@ -12,7 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-@Component
+@Component("todoDao"
+)
 public class TodoDaoImpl implements  TodoDao {
     private SimpleJdbcInsert insertMP3;
     private NamedParameterJdbcTemplate jdbcTemplate;

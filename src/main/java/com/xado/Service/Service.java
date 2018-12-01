@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 
-@Component(value = "service")
+
 public interface Service {
     void add(Todo todo);
     void delete(Todo todo);
