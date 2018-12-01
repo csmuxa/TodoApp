@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -18,14 +19,14 @@ import java.util.List;
 public class HomeController {
     @Autowired
     @Qualifier("service")
-Service service;
+    Service service;
 
-
-
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-public  String list(Model model){
-        List<Todo> todos=service.getAll();
-        model.addAttribute("todos",todos);
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String list(Model model) {
+        List<Todo> todos = service.getAll();
+        model.addAttribute("todos", todos);
         return "Hello";
     }
+
 }
+

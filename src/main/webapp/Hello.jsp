@@ -8,12 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="z" uri="http://www.springframework.org/tags" %>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
     <title>MyFirstServlet</title>
 
 </head>
-<body>
+<table>
 <div class="login">
     <table>
 <c:forEach items="${todos}" var="todo">
@@ -23,6 +25,12 @@
 </div>
 <div class="shadow"></div>
 </c:forEach>
-</body>
+</table>
+    <form action="addTodo" method="post">
+    <br/>
+    <textarea name="description" rows="5" cols="100"></textarea>
+    <br/>
+    <input type="submit" value="Add">
+</form>
 </body>
 </html>
