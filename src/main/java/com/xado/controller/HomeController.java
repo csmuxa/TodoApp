@@ -7,10 +7,8 @@ import com.xado.Todo.TodoDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -27,6 +25,12 @@ public class HomeController {
         model.addAttribute("todos", todos);
         return "Hello";
     }
+    @RequestMapping(value = "/adding",method = RequestMethod.POST,produces = "application/json")
+
+    public void add(@RequestBody Todo todo){
+        service.add(todo);
+    }
+
 
 }
 

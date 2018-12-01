@@ -26,7 +26,7 @@
 <div class="shadow"></div>
 </c:forEach>
 </table>
-    <form action="addTodo" method="post">
+    <form action="/adding" method="POST">
     <br/>
     <textarea name="description" rows="5" cols="100"></textarea>
     <br/>
