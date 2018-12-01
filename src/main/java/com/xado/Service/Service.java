@@ -8,8 +8,8 @@ import java.util.List;
 
 @Component(value = "service")
 public interface Service {
-     void add(Todo todo);
-     void delete(Todo todo);
-     void delete(int id);
-     List<Todo> getAll();
+    void add(Todo todo);
+    void delete(Todo todo);
+    void delete(int id);
+    List<Todo> getAll();
 }
