@@ -25,12 +25,26 @@
 </div>
 <div class="shadow"></div>
 </c:forEach>
+    <script>
+        $("add").click(function (){
+            var title = $("#title").val();
+
+            $.ajax({
+                url: "adding",
+                data: {"title": title },
+                type: "post"})})
+
+    </script>
 </table>
-    <form action="/adding" method="POST">
-    <br/>
-    <textarea name="description" rows="5" cols="100"></textarea>
-    <br/>
-    <input type="submit" value="Add">
+    <form>
+        <table>
+        <tr>
+            <td><label for="title">Add </label> </td>
+            <td><input type="text" name="title" id="title"/></td>
+        </tr>
+        </table>
+    <input type="submit" value="Add" id="add" onClick="add()"/>
 </form>
+
 </body>
 </html>
