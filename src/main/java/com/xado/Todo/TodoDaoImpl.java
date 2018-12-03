@@ -32,7 +32,7 @@ public class TodoDaoImpl implements  TodoDao {
     }
 
     public void delete(Todo todo) {
-
+delete(todo.getId());
     }
 
     public void delete(int id) {

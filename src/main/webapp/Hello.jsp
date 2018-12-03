@@ -25,26 +25,30 @@
 </div>
 <div class="shadow"></div>
 </c:forEach>
-    <script>
-        $("add").click(function (){
-            var title = $("#title").val();
-
-            $.ajax({
-                url: "adding",
-                data: {"title": title },
-                type: "post"})})
-
-    </script>
 </table>
-    <form>
-        <table>
-        <tr>
-            <td><label for="title">Add </label> </td>
-            <td><input type="text" name="title" id="title"/></td>
-        </tr>
-        </table>
-    <input type="submit" value="Add" id="add" onClick="add()"/>
-</form>
-
+<form:form method="POST" action="/adding" modelAttribute="todo">
+<table>
+    <tr>
+        <td><form:label path="title">Add todo</form:label></td>
+        <td><form:input path="title"/></td>
+        <td><form:errors path="title" /></td>
+    </tr>
+<tr>
+    <td><input type="submit" value="Add"/></td>
+</tr>
+</table>
+</form:form>
+<form:form method="POST" action="/removing" modelAttribute="todo">
+<table>
+    <tr>
+        <td><form:label path="id">Delete todo</form:label></td>
+        <td><form:input path="id"/></td>
+        <td><form:errors path="id" /></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Delete"/></td>
+    </tr>
+</table>
+</form:form>
 </body>
 </html>
